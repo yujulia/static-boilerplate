@@ -36,13 +36,19 @@ If you want to FTP the deploy folder somewhere, update the *data/secret.json* an
 gulp upload
 ```
 
-## Tips
+## What Happens 
 
-Jade templates for HTML, modify *Gulpfile.js* to pass in relevant variables.
+Use jade templates for HTML, modify *Gulpfile.js* to pass in relevant variables, it is watched for changes and browsersync will update when a template is saved.
 
 Browserify will bundle components in src/js and lint. Put vendor scripts in deploy/js/vendor, it will be symlinked from build/.
 
-SCSS will be parsed into src/css, normalize appended, autoprefixed, then concat into build/main.css then minified to deploy/main.min.css when you run deploy.
+SCSS will be parsed into src/css, normalize appended, autoprefixed, then concat into build/main.css then minified to deploy/main.min.css when you run deploy. Browsersync will update when file is saved.
+
+## Where to Put Things
+
+Almost all your work goes in *src/*, except static accepts such as third party Javascript which goes in *deploy/js/vendor* and font faces which go in */deploy/fonts*. You can also put images in *deploy/img/* if you don't need them to be minimized. The server runs from *build/* which symlinks font and img assets in *deploy/*. 
+
+
 
 
 ## Boilerplate Structure
