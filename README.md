@@ -46,7 +46,8 @@ SCSS will be parsed into src/css, normalize appended, autoprefixed, then concat 
 
 
 ## Boilerplate Structure
-`
+
+```
 build/
 --- js/
 ------ base.js
@@ -86,4 +87,4 @@ data/
 
 Gulpfile.js
 .gitignore
-`
+```
