@@ -1,0 +1,5 @@
+/*! 
+    nothing mutch
+**/
+$ = require('jquery');
+

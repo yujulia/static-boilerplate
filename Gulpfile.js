@@ -68,7 +68,7 @@ gulp.task("scripts", function(){
 **/
 gulp.task("build-jade", function(){
 
-    var jdata = data;
+    var jdata = {}; // consume json here or whatever
 
     return gulp.src(gconfig.JADE_SRC+"*.jade")
         .pipe(jade({ 
@@ -130,7 +130,9 @@ gulp.task("min-styles", function(){
     generate HTML from JADE templates for deploy
 **/
 gulp.task("pub-jade", function(){
-    var jdata = data;
+    
+    var jdata = {}; // json data goes here
+
     return gulp.src(gconfig.JADE_SRC+"*.jade")
         .pipe(jade({ 
             locals: { "dev": false, "data" : jdata, "timestamp":  gutilDate.date('mmm d, yyyy h:MM:ss TT Z') },
